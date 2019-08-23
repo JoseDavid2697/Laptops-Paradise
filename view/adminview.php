@@ -9,20 +9,16 @@ require_once 'public/headeradmin.php';
     <h1 style="font-size:30px;color:royalblue">Administrative Module</h1>
     <p>Here you can see the options to handle the products</p>
     <hr />
-    <div class="row justify-content-center">
-        <div class="col-6">
-            <div class="list-group list-group-horizontal">
-                <a href="?controlador=Items&accion=insertItemView" class="list-group-item list-group-item-primary">Insert Product</a>
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="list-group list-group-horizontal">
-                <a href="?controlador=Items&accion=updateItemView" class="list-group-item list-group-item-primary">Update Product</a>
-            </div>
-        </div>
-    </div>
     <br><br><br>
     <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <!-- Sidebar -->
+            <div class="list-group" style="margin-bottom: 20px;">
+                <a href="?controlador=Items&accion=insertItemView" class="list-group-item list-group-item-action">Insert Product</a>
+                <a href="?controlador=Items&accion=updateItemView" class="list-group-item list-group-item-action">Update Product</a>
+                <a href="?controlador=Items&accion=" class="list-group-item list-group-item-action">Request Access Code</a>
+            </div>
+        </div>
         <div class="col-lg-8 col-md-4 col-sm-4">
             <h5 class="card-title">Laptop's Paradise</h5>
             <hr id="hr" />
@@ -48,7 +44,7 @@ require_once 'public/headeradmin.php';
                     </select>
                 </div>
                 <div class="error_message" name="error_message" id="error_message">
-                        <span id="insert_result"></span>
+                    <span id="insert_result"></span>
                 </div>
                 <button type="submit" class="btn btn-primary">Insert</button>
             </form>
