@@ -63,7 +63,7 @@ class ItemsController
         if($result != 0){
             $_SESSION['items_list'] = $result;
         }
-    }
+    }//getItems
 
     //Insert a new item into the database
     public function insertItem(){
@@ -101,6 +101,7 @@ class ItemsController
         }
     }//insert
 
+    //Update a item, changing its name,price or description
     public function updateItem(){
         require_once 'model/ItemsModel.php';
         $items = new ItemsModel();
@@ -112,5 +113,14 @@ class ItemsController
         if($no_empty!='error'){
             $this->view->show("adminview.php");
         }
-    }
+    }//update
+
+    //Delete an item from the database
+    public function deleteItem(){
+        require_once 'model/ItemsModel.php';
+        $items = new ItemsModel();
+        $id = $_GET['id'];
+        $res = $items->deleteItem($id);
+        $this->view->show("adminview.php");
+    }//delete
 }

@@ -9,18 +9,17 @@ require_once 'public/headeradmin.php';
     <h1 style="font-size:30px;color:royalblue">Administrative Module</h1>
     <p>Here you can see the options to handle the products</p>
     <hr />
-    <br><br><br>
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4">
             <!-- Sidebar -->
             <div class="list-group" style="margin-bottom: 20px;">
-                <a href="?controlador=Items&accion=insertItemView" class="list-group-item list-group-item-action">Insert Product</a>
-                <a href="?controlador=Items&accion=updateItemView" class="list-group-item list-group-item-action">Update Product</a>
-                <a href="?controlador=Items&accion=" class="list-group-item list-group-item-action">Request Access Code</a>
+                <a href="?controlador=Items&accion=insertItemView" class="list-group-item list-group-item-success">Insert Product</a>
+                <a href="?controlador=Items&accion=updateItemView" class="list-group-item list-group-item-success">Update Product</a>
+                <a href="?controlador=Items&accion=" class="list-group-item list-group-item-success">Request Access Code</a>
             </div>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8">
-            <h5 class="card-title">Laptop's Paradise</h5>
+            <h5 class="card-title">Laptop's Paradise - Selected Item</h5>
             <hr id="hr" />
             <h6 class="card-subtitle mb-2 text-muted">Selected Product to update</h6>
             <form action="?controlador=Items&accion=updateItem" method="post" enctype="multipart/form-data">
@@ -51,8 +50,14 @@ require_once 'public/headeradmin.php';
 <hr />
 <style>
     h5 {
-        text-decoration: underline !important;
         color: royalblue !important;
+        font-size: 26px !important;
+    }
+
+    .list-group a:hover{
+        text-decoration: none !important;
+        font-size: 20px !important;
+        color: darkgreen !important;
     }
 </style>
 
