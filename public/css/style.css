@@ -1,0 +1,26 @@
+body {
+    padding-top: 56px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.logo {
+    max-height: 60px;
+    width: auto;
+    display: inline-block;
+}
+
+#navbar-main{
+    background-color: lightgray !important;
+    transition: top 0.3s;
+}
+
+#navbar-main a{
+    color: black !important;
+}
+
+#navbar-main a:hover{
+    color: grey !important;
+}
