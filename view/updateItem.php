@@ -9,25 +9,20 @@ require_once 'public/headeradmin.php';
     <h1 style="font-size:30px;color:royalblue">Administrative Module</h1>
     <p>Here you can see the options to handle the products</p>
     <hr />
-    <div class="row justify-content-center">
-        <div class="col-6">
-            <div class="list-group list-group-horizontal">
-                <a href="?controlador=Items&accion=insertItemView" class="list-group-item list-group-item-primary">Insert Product</a>
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="list-group list-group-horizontal">
-                <a href="?controlador=Items&accion=updateItemView" class="list-group-item list-group-item-primary">Update Product</a>
-            </div>
-        </div>
-    </div>
     <br><br><br>
     <div class="row">
-        <div class="container">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <!-- Sidebar -->
+            <div class="list-group" style="margin-bottom: 20px;">
+                <a href="?controlador=Items&accion=insertItemView" class="list-group-item list-group-item-action">Insert Product</a>
+                <a href="?controlador=Items&accion=updateItemView" class="list-group-item list-group-item-action">Update Product</a>
+                <a href="?controlador=Items&accion=" class="list-group-item list-group-item-action">Request Access Code</a>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-4 col-sm-4">
             <h6 class="card-subtitle mb-2 text-muted">Update Product</h6>
             <div class="table-responsive">
                 <table id="myTable" class="table table-hover">
-                    <caption>Item List</caption>
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -48,8 +43,8 @@ require_once 'public/headeradmin.php';
                             <td><?php echo $row["description"] ?></td>
                             <td> <img src="public/img/<?php echo $row["image"] ?>" alt="" style="width: 100px;height: 100px;"></td>
                             <td><?php echo $row["categorie"] ?></td>
-                            <td><a class="btn btn-primary" href="">Delete</a></td>
-                            <td><a class="btn btn-primary" href="">Update</a></td>
+                            <td><a class="btn btn-danger" href="">Delete</a></td>
+                            <td><a class="btn btn-success" href="">Update</a></td>
                         </tr>
                         <?php } ?>
                     </tbody>
