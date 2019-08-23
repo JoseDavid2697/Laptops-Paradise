@@ -57,6 +57,14 @@ class ItemsModel
         $query->CloseCursor();
         return $data;
     }
+
+    public function deleteItem($id){
+        $query = $this->db->prepare('call sp_delete_item("'.$id.'")');
+        $query->execute();
+        $data = $query->fetch();
+        $query->CloseCursor();
+        return $data;
+    }
     
 
     
