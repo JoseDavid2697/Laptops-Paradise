@@ -39,7 +39,7 @@ require_once 'public/headeradmin.php';
                 <div class="form-group">
                     <select class="form-control" id="category" name="category">
                         <option value="" disabled selected>Category</option>
-                        <option value="laptop">Laptop</option>
+                        <option value="Laptop">Laptop</option>
                     </select>
                 </div>
                 <div class="error_message" name="error_message" id="error_message">
