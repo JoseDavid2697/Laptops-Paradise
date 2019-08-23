@@ -42,5 +42,22 @@ class ItemsModel
         return $data;
     }
 
+    public function getSelectedItem($id){
+        $query = $this->db->prepare('call sp_get_selected_item("'.$id.'")');
+        $query->execute();
+        $data = $query->fetchAll();
+        $query->CloseCursor();
+        return $data;
+    }
+
+    public function updateItem($id,$item_name,$price,$description){
+        $query = $this->db->prepare('call sp_update_item("'.$id.'","'.$item_name.'","'.$price.'","'.$description.'")');
+        $query->execute();
+        $data = $query->fetch();
+        $query->CloseCursor();
+        return $data;
+    }
+    
+
     
 }//fin de clase

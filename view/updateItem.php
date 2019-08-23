@@ -19,7 +19,7 @@ require_once 'public/headeradmin.php';
                 <a href="?controlador=Items&accion=" class="list-group-item list-group-item-action">Request Access Code</a>
             </div>
         </div>
-        <div class="col-lg-8 col-md-4 col-sm-4">
+        <div class="col-lg-8 col-md-8 col-sm-8">
             <h6 class="card-subtitle mb-2 text-muted">Update Product</h6>
             <div class="table-responsive">
                 <table id="myTable" class="table table-hover">
@@ -44,7 +44,7 @@ require_once 'public/headeradmin.php';
                             <td> <img src="public/img/<?php echo $row["image"] ?>" alt="" style="width: 100px;height: 100px;"></td>
                             <td><?php echo $row["categorie"] ?></td>
                             <td><a class="btn btn-danger" href="">Delete</a></td>
-                            <td><a class="btn btn-success" href="">Update</a></td>
+                            <td><a class="btn btn-success" href="?controlador=Items&accion=openSelectedItemView&id=<?php echo $row['id']?>">Update</a></td>
                         </tr>
                         <?php } ?>
                     </tbody>

@@ -5,6 +5,10 @@ if (!isset($_SESSION['items_list'])) {
     $_SESSION['items_list'] = array();
 }
 
+if (!isset($_SESSION['id_to_update'])) {
+    $_SESSION['id_to_update'] = '';
+}
+
 class ItemsController
 {
     public function __construct()
@@ -19,7 +23,26 @@ class ItemsController
     }
 
     public function updateItemView(){
+        $this->getItems();
         $this->view->show("updateItem.php");
+    }
+
+    
+    public function openSelectedItemView(){
+        require_once 'model/ItemsModel.php';
+        $items = new ItemsModel();
+        $id = $_GET['id'];
+        $_SESSION['id_to_update'] = $id;
+        $data['items'] = $items->getSelectedItem($id);
+        
+        foreach($data['items'] as $item){
+            $data['item_name'] = $item[0];
+            $data['price'] = $item[1];
+            $data['description'] = $item[2];
+            $data['image'] = $item[3];
+        }
+        $this->view->show("selectedItemView.php",$data);
+
     }
 
 
@@ -75,6 +98,19 @@ class ItemsController
         }else {
 
             echo "Failed to load the image";
+        }
+    }//insert
+
+    public function updateItem(){
+        require_once 'model/ItemsModel.php';
+        $items = new ItemsModel();
+        $item_name = $_POST['item_name'];
+        $price = $_POST['price'];
+        $description = $_POST['description']; 
+        $no_empty = (($item_name != '' && $price != '' && $description != '') ? $items->updateItem($_SESSION['id_to_update'],$item_name,$price,$description) : 'error');
+        
+        if($no_empty!='error'){
+            $this->view->show("adminview.php");
         }
     }
 }
