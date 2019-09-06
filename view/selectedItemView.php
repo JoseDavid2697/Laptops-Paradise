@@ -15,7 +15,7 @@ require_once 'public/headeradmin.php';
             <div class="list-group" style="margin-bottom: 20px;">
                 <a href="?controlador=Items&accion=insertItemView" class="list-group-item list-group-item-success">Insert Product</a>
                 <a href="?controlador=Items&accion=updateItemView" class="list-group-item list-group-item-success">Update Product</a>
-                <a href="?controlador=Items&accion=" class="list-group-item list-group-item-success">Request Access Code</a>
+                <a href="?controlador=Items&accion=requestAccessCodeView" class="list-group-item list-group-item-success">Request Access Code</a>
             </div>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8">

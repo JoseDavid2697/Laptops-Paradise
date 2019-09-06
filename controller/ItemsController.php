@@ -45,14 +45,21 @@ class ItemsController
 
     }
 
+    public function requestAccessCodeView(){
+        $this->view->show("requestAccessCodeView.php");
+    }
+
 
 
 
     /*--------------------CRUD FUNCTIONS--------------------------*/
 
-    public function getNewCode(){
-        echo 'Your code is: '.'CODE123';
-        echo '<br>';
+    public function requestAccessCode(){
+        require_once 'model/WSModel.php';
+        $webService = new WSModel();
+        $code = $webService->requestAccessCode();
+        echo $code;
+        
     }
 
     //Get all the items stored in the database
