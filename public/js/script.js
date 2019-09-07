@@ -1,11 +1,11 @@
 
 //Send a request to the web service to get a new access code for the main shop
-function requestNewCode() {
+function requestAccessCode() {
     
     $.ajax(
         {
             data: null,
-            url: '?controlador=Items&accion=getNewCode',
+            url: '?controlador=Items&accion=requestAccessCode',
             type: 'post',
             beforeSend: function () {
                 $("#code").html("Requesting, \n\ wait a second...");

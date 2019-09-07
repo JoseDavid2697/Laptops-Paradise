@@ -21,31 +21,14 @@ require_once 'public/headeradmin.php';
         <div class="col-lg-8 col-md-4 col-sm-4">
             <h5 class="card-title">Laptop's Paradise</h5>
             <hr id="hr" />
-            <h6 class="card-subtitle mb-2 text-muted">Insert Product</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Request your suscription code for ShoppingFast.com</h6>
             <form action="?controlador=Items&accion=insertItem" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="item_name" name="item_name" placeholder="Name">
-                </div>
-                <div class="form-group">
-                    <input type="number" class="form-control" id="price" name="price" placeholder="Price">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="description" name="description" placeholder="Description">
-                </div>
-                <div class="form-group">
-                    <label for="image">Image:</label>
-                    <input type="file" class="form-control" id="image" name="image">
-                </div>
-                <div class="form-group">
-                    <select class="form-control" id="category" name="category">
-                        <option value="" disabled selected>Category</option>
-                        <option value="Laptop">Laptop</option>
-                    </select>
-                </div>
                 <div class="error_message" name="error_message" id="error_message">
-                    <span id="insert_result"></span>
+                    <div class="alert alert-success" role="alert" id="code">
+                        Your access code here!
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Insert</button>
+                <button type="button" class="btn btn-primary" href="javascript:;" onclick="requestAccessCode();return false;">Request code</button>
             </form>
             <br />
             <br />
@@ -64,7 +47,7 @@ require_once 'public/headeradmin.php';
         font-size: 26px !important;
     }
 
-    .list-group a:hover{
+    .list-group a:hover {
         text-decoration: none !important;
         font-size: 20px !important;
         color: darkgreen !important;
